@@ -1,0 +1,12 @@
+[
+  {
+    "objectApiName": "apiName",
+    "recordIds": [
+      {
+        "Id": "id",
+        "name": "name",
+        "lastModifiedById": "lastModifiedById"
+      }
+    ]
+  }
+]

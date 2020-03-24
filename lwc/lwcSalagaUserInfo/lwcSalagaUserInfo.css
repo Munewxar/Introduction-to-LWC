@@ -1,0 +1,19 @@
+.user-main-info-container {
+	border-bottom: 1px solid #9e9e9e;
+}
+
+.avatar {
+	width: 7rem;
+	height: 7rem;
+}
+
+.name {
+	font-size: 3rem;
+	background-image: linear-gradient(to left, #eeaaec, #541d82, #5c69ff, #38803e, #fffb4c, #ffb435, #ff3d46);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.user-field {
+	font-size: 1rem;
+}

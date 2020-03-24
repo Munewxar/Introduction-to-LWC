@@ -1,0 +1,25 @@
+<template>
+	<div class="slds-m-horizontal_medium slds-p-vertical_medium user-main-info-container">
+		<div class="slds-text-align_center">
+			<lightning-avatar src={userAvatarURL}
+							  variant="circle"
+							  class="avatar"
+							  alternative-text="avatar">
+			</lightning-avatar>
+		</div>
+
+		<div class="name slds-m-top_small slds-text-align_center" data-id="name">{userName}</div>
+	</div>
+
+	<div class="slds-m-around_medium">
+		<template for:each={userFields} for:item="field">
+			<div class="user-field slds-p-left_small slds-p-bottom_x-small" key={field.fieldApiName}>
+				<b>{field.label}:</b> {field.value}
+			</div>
+		</template>
+	</div>
+
+	<div class="slds-text-align_center">
+		<lightning-button variant="brand" label="Magic" data-id="button" onclick={openModal}></lightning-button>
+	</div>
+</template>

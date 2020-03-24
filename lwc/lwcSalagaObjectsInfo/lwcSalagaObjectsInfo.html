@@ -1,0 +1,58 @@
+<template>
+	<section role="dialog" aria-modal="true" class="slds-modal slds-modal_small slds-fade-in-open">
+		<div class="slds-modal__container">
+			<!-- HEADER -->
+			<header class="slds-modal__header">
+				<button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+						title="Close"
+						data-id="close"
+						onclick={closeModal}>
+					<lightning-icon icon-name="utility:close"
+									title="Close"
+									size="small"
+									class="slds-icon"
+									variant="inverse">
+					</lightning-icon>
+				</button>
+				<h2 class="slds-modal__title slds-hyphenate">Magic</h2>
+			</header>
+
+			<!-- BODY -->
+			<div class="slds-modal__content slds-p-around_medium">
+				<lightning-dual-listbox name="Objects"
+										data-id="objects-list-box"
+										class="list-box"
+										label="Select Objects"
+										source-label="Available"
+										selected-label="Selected"
+										size="5"
+										options={objects}
+										onchange={handleChange}>
+				</lightning-dual-listbox>
+
+				<div class="slds-m-top_medium slds-text-align_center">
+					<lightning-button variant="brand"
+									  label="Press me!"
+									  data-id="search-button"
+									  disabled={isButtonDisabled}
+									  onclick={handleClick}>
+					</lightning-button>
+				</div>
+
+				<template for:each={modifiedObjects} for:item="object">
+					<div class="slds-m-top_small" style="height: 300px" key={object.objectApiName}>
+						<c-lwc-salaga-modified-records-table records={object.recordIds}></c-lwc-salaga-modified-records-table>
+					</div>
+				</template>
+			</div>
+
+			<!-- FOOTER -->
+			<footer class="slds-modal__footer">
+				<lightning-button variant="neutral" data-id="cancel" label="Close" onclick={closeModal}>
+				</lightning-button>
+			</footer>
+		</div>
+	</section>
+
+	<div class="slds-backdrop slds-backdrop_open"></div>
+</template>

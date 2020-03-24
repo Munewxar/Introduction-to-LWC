@@ -1,0 +1,9 @@
+<template>
+	<lightning-card title="SALAGA PLUS">
+		<c-lwc-salaga-user-info onopenmodal={handleOpenModal}></c-lwc-salaga-user-info>
+	</lightning-card>
+
+	<template if:true={openModal}>
+		<c-lwc-salaga-objects-info onclosemodal={handleCloseModal}></c-lwc-salaga-objects-info>
+	</template>
+</template>
